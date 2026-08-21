@@ -125,9 +125,7 @@ O dataset contem **1000 pedidos** com 13 colunas originais.
 
 O modelo de regressao linear para previsao de receita apresentou metricas completas de avaliacao (R² e RMSE) calculadas no split de teste (20% dos dados).
 
-## Execuçã
-
-### Requisitos
+## Execução
 
 Instale as dependencias em `requirements.txt`:
 
