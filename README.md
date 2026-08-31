@@ -2,10 +2,17 @@
 
 Repositório com projetos de Análise Exploratória de Dados (EDA) usando Python e Jupyter Notebooks.
 
+A ideia é mostrar a evolução do trabalho, do aprendizado à escala:
+
+1. **[E_commerce](./E_commerce/)** — base sintética pequena (1.000 pedidos): fundamentos de EDA e primeira modelagem;
+2. **[E_commerce_2](./E_commerce_2/)** — dados reais (541.909 transações, UK Online Retail): análise completa de negócio;
+3. **[E_commerce_3](./E_commerce_3/)** — base sintética em escala (1M de transações): manipulação e visualização com dados grandes.
+
 | Projeto | Dataset | Escopo |
 |---------|---------|--------|
-| [E_commerce](./E_commerce/) | 1.000 pedidos simulados | KPIs, RFM, K-Means, Regressão Linear |
+| [E_commerce](./E_commerce/) | 1.000 pedidos (sintético) | KPIs, RFM, K-Means, Regressão Linear |
 | [E_commerce_2](./E_commerce_2/) | 541.909 transações reais (UK) | Saúde financeira, sazonalidade, devoluções, geografia |
+| [E_commerce_3](./E_commerce_3/) | 1.000.123 transações (sintético, global) | KPIs, análises temporais, sazonalidade, perfil do cliente |
 
 ---
 
@@ -21,7 +28,7 @@ Análise exploratória de **1.000 pedidos** de um e-commerce simulado, inspirado
 - Perfil demográfico dos clientes
 - Satisfação e análise de reviews
 - Segmentação de clientes via RFM + K-Means Clustering
-- Modelo de regressão linear para previsão de receita
+- Modelo de regressão linear para previsão de satisfação (resultado negativo, reportado como tal)
 
 [Ver mais detalhes em E_commerce/README.md](./E_commerce/README.md)
 
@@ -44,6 +51,25 @@ Análise exploratória de **541.909 transações** de uma loja online britânica
 | ARPU (líquida) | ~£2.247 |
 
 [Ver mais detalhes em E_commerce_2/README.md](./E_commerce_2/README.md)
+
+---
+
+### E_commerce_3
+
+Análise exploratória de **1.000.123 transações** de uma loja de varejo global (fevereiro/2024 — fevereiro/2026, base sintética em escala).
+
+**KPIs Destacados:**
+
+| KPI | Valor |
+|-----|-------|
+| Receita Total | $403.3M |
+| Lucro Total | $160.9M |
+| Margem Média | 39.5% |
+| Ticket Médio | $403.24 |
+| Clientes Únicos | 991.945 |
+| Devolvidos | ~10% |
+
+[Ver mais detalhes em E_commerce_3/README.md](./E_commerce_3/README.md)
 
 ---
 
