@@ -2,17 +2,16 @@
 
 Análise exploratória de dados com **541.909 transações** de uma loja de varejo online britânica. O dataset abrange o período de dezembro de 2010 a dezembro de 2011.
 
-**Dataset**: []()
+**Dataset**: [Online Retail — UCI ML Repository](https://archive.ics.uci.edu/dataset/502/online+retail)
 
 ## Sumário
 
-- Visão Geral (#-visão-geral)
-- Resultados Principais (#-resultados-principais)
-- Dados
-- Tecnologias Utilizadas (#-tecnologias-utilizadas)
-- Execução (#-execução)
-- Seções da Análise (#-seções-da-análise)
-- Fontes (#-fontes)
+- [Visão Geral](#vis%C3%A3o-geral)
+- [Resultados Principais](#resultados-principais)
+- [Dados](#dados)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Execução](#execu%C3%A7%C3%A3o)
+- [Autor](#autor)
 
 ---
 
@@ -23,7 +22,7 @@ Investigação de comportamento de compra de uma loja online de vendas de presen
 - **Saúde financeira** da empresa (receita bruta, líquida, ticket médio)
 - **Sazonalidade** das vendas ao longo do tempo
 - **Devoluções e cancelamentos**
-- **Comportamento geográfica**
+- **Comportamento geográfico**
 - **Geração de insights**
 
 ---
@@ -32,14 +31,14 @@ Investigação de comportamento de compra de uma loja online de vendas de presen
 
 | KPI | Valor |
 | --- | --- |
-| Receita Líquida | ~£40M |
-| Receita Bruta | ~£45M |
+| Receita Líquida | ~£9,7M |
+| Receita Bruta | ~£10,6M |
 | Perda com Devoluções | ~£896K (8,4% da receita bruta) |
-| Ticket Médio | ~£70 |
-| Transações Positivas | ~500K |
-| Clientes Ativos | ~4.339 |
-| ARPU | ~£2.660 |
-| Produtos Únicos | ~4.070 |
+| Ticket Médio (por fatura) | ~£514 |
+| Transações Positivas | 531.285 |
+| Clientes Ativos | 4.339 |
+| ARPU (líquida) | ~£2.247 |
+| Produtos Únicos | ~3.941 |
 | Países Atendidos | 38 |
 
 ---
@@ -57,11 +56,17 @@ Investigação de comportamento de compra de uma loja online de vendas de presen
 | `CustomerID` | Float | ID do cliente (opcional) |
 | `Country` | String | País de destino |
 
+**Observações sobre os dados:**
+
+- O arquivo é codificado em **ISO-8859-1** (levar em conta ao carregar: `encoding='ISO-8859-1'`).
+- As datas de `InvoiceDate` vêm em formato **m/d/y** (ex.: `12/1/2010 8:26` = 1º de dezembro de 2010).
+- **10.624 linhas** têm `Quantity` negativa — são devoluções/cancelamentos, tratadas separadamente na análise.
+
 ---
 
-## Técnologias Utilizados
+## Tecnologias Utilizadas
 
- | Tecnologia | Uso |
+| Tecnologia | Uso |
 | --- | --- |
 | **Pandas** | Manipulação e transformação de dados |
 | **NumPy** | Cálculos numéricos |
@@ -82,7 +87,10 @@ pip install -r requirements.txt
 
 ### Como rodar
 
-jupyter notebook e_commerce.ipynb
+```bash
+jupyter notebook eda_ecommerce_uk.ipynb
+```
+
 Ou utilize VS Code com a extensao Jupyter para uma experiéncia integrada.
 
 ## Autor

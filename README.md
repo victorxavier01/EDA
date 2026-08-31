@@ -29,19 +29,19 @@ Análise exploratória de **1.000 pedidos** de um e-commerce simulado, inspirado
 
 ### E_commerce_2
 
-Análise exploratória de **541.909 transações** de uma loja online britânica de presentes (dezembro 2009 — dezembro 2011).
+Análise exploratória de **541.909 transações** de uma loja online britânica de presentes (dezembro 2010 — dezembro 2011).
 
 **KPIs Destacados:**
 
 | KPI | Valor |
 |-----|-------|
-| Receita Líquida | ~£40M |
-| Receita Bruta | ~£45M |
+| Receita Líquida | ~£9,7M |
+| Receita Bruta | ~£10,6M |
 | Perda com Devoluções | ~£896K (8,4%) |
-| Ticket Médio | ~£70 |
-| Transações Positivas | ~500K |
-| Clientes Ativos | ~4.339 |
-| ARPU | ~£2.660 |
+| Ticket Médio (por fatura) | ~£514 |
+| Transações Positivas | 531.285 |
+| Clientes Ativos | 4.339 |
+| ARPU (líquida) | ~£2.247 |
 
 [Ver mais detalhes em E_commerce_2/README.md](./E_commerce_2/README.md)
 
