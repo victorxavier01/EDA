@@ -8,8 +8,8 @@ __pycache__/
 .env
 
 # Dados grandes (baixar via Kaggle/UCI — ver os READMEs de cada projeto)
-E_commerce_2/data.csv
-E_commerce_3/data.csv
+02-ecommerce-uk/data.csv
+03-ecommerce-1m/data.csv
 
 # SO
 .DS_Store

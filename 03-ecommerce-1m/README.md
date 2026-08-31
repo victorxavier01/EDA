@@ -77,7 +77,7 @@ Base sintética com **1.000.123 linhas** e **62 colunas**, agrupadas em:
 
 1. Baixe o `data.csv` no [Kaggle](https://www.kaggle.com/datasets/akrambelha/global-e-commerce-dataset-1m-records-20242026) e coloque na pasta do projeto.
 2. Instale as dependências: `pip install pandas numpy plotly matplotlib`
-3. Execute: `jupyter notebook eda_ecommerce_3.ipynb` ou abra no VS Code com a extensão Jupyter.
+3. Execute: `jupyter notebook eda_ecommerce_1m.ipynb` ou abra no VS Code com a extensão Jupyter.
 
 ## Autor
 

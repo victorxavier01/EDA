@@ -4,21 +4,21 @@ Repositório com projetos de Análise Exploratória de Dados (EDA) usando Python
 
 A ideia é mostrar a evolução do trabalho, do aprendizado à escala:
 
-1. **[E_commerce](./E_commerce/)** — base sintética pequena (1.000 pedidos): fundamentos de EDA e primeira modelagem;
-2. **[E_commerce_2](./E_commerce_2/)** — dados reais (541.909 transações, UK Online Retail): análise completa de negócio;
-3. **[E_commerce_3](./E_commerce_3/)** — base sintética em escala (1M de transações): manipulação e visualização com dados grandes.
+1. **[01-ecommerce-basico](./01-ecommerce-basico/)** — base sintética pequena (1.000 pedidos): fundamentos de EDA e primeira modelagem;
+2. **[02-ecommerce-uk](./02-ecommerce-uk/)** — dados reais (541.909 transações, UK Online Retail): análise completa de negócio;
+3. **[03-ecommerce-1m](./03-ecommerce-1m/)** — base sintética em escala (1M de transações): manipulação e visualização com dados grandes.
 
 | Projeto | Dataset | Escopo |
 |---------|---------|--------|
-| [E_commerce](./E_commerce/) | 1.000 pedidos (sintético) | KPIs, RFM, K-Means, Regressão Linear |
-| [E_commerce_2](./E_commerce_2/) | 541.909 transações reais (UK) | Saúde financeira, sazonalidade, devoluções, geografia |
-| [E_commerce_3](./E_commerce_3/) | 1.000.123 transações (sintético, global) | KPIs, análises temporais, sazonalidade, perfil do cliente |
+| [01-ecommerce-basico](./01-ecommerce-basico/) | 1.000 pedidos (sintético) | KPIs, RFM, K-Means, Regressão Linear |
+| [02-ecommerce-uk](./02-ecommerce-uk/) | 541.909 transações reais (UK) | Saúde financeira, sazonalidade, devoluções, geografia |
+| [03-ecommerce-1m](./03-ecommerce-1m/) | 1.000.123 transações (sintético, global) | KPIs, análises temporais, sazonalidade, perfil do cliente |
 
 ---
 
 ## Projetos
 
-### E_commerce
+### 01-ecommerce-basico
 
 Análise exploratória de **1.000 pedidos** de um e-commerce simulado, inspirado no dataset [Online Retail](https://www.kaggle.com/datasets/ertugrulesol/online-retail-data).
 
@@ -30,11 +30,11 @@ Análise exploratória de **1.000 pedidos** de um e-commerce simulado, inspirado
 - Segmentação de clientes via RFM + K-Means Clustering
 - Modelo de regressão linear para previsão de satisfação (resultado negativo, reportado como tal)
 
-[Ver mais detalhes em E_commerce/README.md](./E_commerce/README.md)
+[Ver mais detalhes em 01-ecommerce-basico/README.md](./01-ecommerce-basico/README.md)
 
 ---
 
-### E_commerce_2
+### 02-ecommerce-uk
 
 Análise exploratória de **541.909 transações** de uma loja online britânica de presentes (dezembro 2010 — dezembro 2011).
 
@@ -50,11 +50,11 @@ Análise exploratória de **541.909 transações** de uma loja online britânica
 | Clientes Ativos | 4.339 |
 | ARPU (líquida) | ~£2.247 |
 
-[Ver mais detalhes em E_commerce_2/README.md](./E_commerce_2/README.md)
+[Ver mais detalhes em 02-ecommerce-uk/README.md](./02-ecommerce-uk/README.md)
 
 ---
 
-### E_commerce_3
+### 03-ecommerce-1m
 
 Análise exploratória de **1.000.123 transações** de uma loja de varejo global (fevereiro/2024 — fevereiro/2026, base sintética em escala).
 
@@ -69,7 +69,7 @@ Análise exploratória de **1.000.123 transações** de uma loja de varejo globa
 | Clientes Únicos | 991.945 |
 | Devolvidos | ~10% |
 
-[Ver mais detalhes em E_commerce_3/README.md](./E_commerce_3/README.md)
+[Ver mais detalhes em 03-ecommerce-1m/README.md](./03-ecommerce-1m/README.md)
 
 ---
 
