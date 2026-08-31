@@ -23,9 +23,12 @@ Análise exploratória de dados com mais de **1 milhão de transações** de uma
 
 Investigação exploratória de uma base global de e-commerce:
 
-- **KPIs gerais** (receita, lucro, ticket médio, margem, devoluções)
+- **KPIs gerais** (receita, lucro, ticket médio, margem, devoluções) e **KPIs por status do pedido**
 - **Análises temporais** (receita e lucro por ano, sazonalidade mensal, dias úteis vs fim de semana)
-- **Perfil do cliente** (gênero, faixa etária, segmento, cidades)
+- **Perfil do cliente** (gênero, faixa etária, segmento, cidades, recorrência)
+- **Produtos e devoluções** (categorias, motivos e impacto financeiro)
+- **Entrega e experiência** (correlação entre prazo de entrega e avaliação)
+- **Pagamento e geografia** (métodos de pagamento e países)
 - **Geração de insights e recomendações**
 
 ---
@@ -38,13 +41,18 @@ Investigação exploratória de uma base global de e-commerce:
 | Clientes Únicos | 991.945 |
 | Produtos Únicos | 753.516 |
 | Países | 10 |
-| Receita Total | $403.3M |
-| Lucro Total | $160.9M |
-| Margem Média | 39.5% |
+| Receita Total (todos os status) | $403.3M |
+| Lucro Total (todos os status) | $160.9M |
+| Receita (Completed) | $282.6M |
+| Lucro (Completed) | $112.8M |
+| Margem Ponderada | 39.9% |
 | Ticket Médio | $403.24 |
 | Avaliação Média | 3.0/5 |
 | Dias de Entrega (média) | 7.5 |
-| Devolvidos | ~10% |
+| Devolvidos | ~10% ($40.1M de receita) |
+| Ano Pico | 2025 ($201.6M) |
+
+> **Nota**: apenas 70% das transações está `Completed`; o total de $403.3M inclui também Pending, Processing, Returned e Cancelled.
 
 ---
 
@@ -60,6 +68,12 @@ Base sintética com **1.000.123 linhas** e **62 colunas**, agrupadas em:
 | Financeiro | `unit_price_usd`, `quantity`, `discount_percent`, `discount_amount_usd`, `total_price_usd`, `cost_usd`, `profit_usd`, `tax_usd`, `currency`, `profit_margin_percent` |
 | Pagamento/Entrega | `payment_method`, `payment_status`, `installment_plan`, `shipping_method`, `shipping_cost_usd`, `delivery_days`, `shipping_country`, `warehouse_location`, `delivery_status` |
 | Comportamento | `rating`, `review_sentiment`, `customer_feedback`, `coupon_used`, `coupon_code`, `campaign_source`, `device_type`, `traffic_source`, `session_duration_minutes`, `pages_visited`, `abandoned_cart_before`, `fraud_risk_score`, `order_priority`, `support_ticket_created` |
+
+### Pontos de Qualidade (verificados na limpeza)
+
+- **`order_id` não é único**: 8.140 IDs colidem apontando para clientes/produtos/datas distintos — artefato do gerador de IDs da base sintética. Não há linhas duplicadas integrais; o grão da base segue sendo **1 linha = 1 transação**.
+- **`is_weekend` é 100% coerente** com a data do pedido.
+- **Nulos condicionais** (não são "faltas"): `return_reason` aparece apenas em pedidos `Returned`; `coupon_code` apenas quando `coupon_used = Yes`; `customer_feedback` é opcional.
 
 ---
 
