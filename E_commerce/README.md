@@ -82,10 +82,12 @@ O dataset contem **1000 pedidos** com 13 colunas originais.
 
 ---
 
+## Metodologia
+
 ### 1. Carregamento e Limpeza
 
 - Verificação e conversão de tipos de dados (`order_date` para datetime)
-- Criação de features temporais e engenharia de features (`receita`, `mes`, `trimestre`, `dia-semana`, `faixa_etaria`)
+- Criação de features temporais e engenharia de features (`receita`, `mes`, `trimestre`, `faixa_etaria`)
 - Tratamento de valores (mediana para `review_score`, "Desconhecido" para `gender`)
 
 ### 2. KPIs e Tendencias
@@ -104,26 +106,27 @@ O dataset contem **1000 pedidos** com 13 colunas originais.
 ### 4. Satisfacao e Review
 
 - Histograma da distribuição de notas
-- Nota média por categoria (sports & outdoors lidera com ~3.99)
+- Nota média por categoria (Sports & Outdoors lidera com ~4.07)
 - Relação entre preço e quantidade por categoria
-- **Conclusão**: notas consistentes entre categorias
+- **Conclusão**: notas consistentes entre categorias, com média geral próxima de ~4.0/5
 
 ### 5. Segmentacao (RFM + Clustering)
 
-- **RFM Analysis**: Calcula Recency, Frequency e Monetary para cada cliente
-- **K-Means Clustering**: Elbow method para seleção de K=4 clusters ótimos
-- **Regressao Linear**: Modelo para prever receita a partir de preço e quantidade (split 80/20)
+- **RFM Analysis**: Calcula Recency, Frequency e Monetary para cada cliente (cada cliente tem exatamente 1 pedido nesta base, então Frequency = 1 para todos e a segmentação fica efetivamente em Recência + Monetário)
+- **K-Means Clustering**: Elbow method para seleção de K=4 clusters
+- **Regressão Linear**: Modelo para prever satisfação (`review_score`) a partir de preço e quantidade (split 80/20) — R² ≈ 0,44%
 - Visualizações: scatter plot, barras de spend, distribuição de clusters
 
 ### Principal Insights
 
-1. **Eletronicos é a categoria mais rentável**, merecendo mais investimentos em estoque e marketing
-2. **Satisfacao do cliente em nivel moderado** (~3.5/5), com oportunidades de melhoria
-3. **Segmentacao RFM permite marketing direcionado** com 4 perfis de clientes identificados
+1. **Electronics é a categoria mais rentável**, merecendo mais investimentos em estoque e marketing
+2. **Satisfação do cliente em bom nível** (~4.0/5), com notas consistentes entre categorias
+3. **Preço e quantidade não explicam a satisfação** (R² ≈ 0): em dados reais, investigaríamos outras variáveis (entrega, atendimento, produto)
+4. **Segmentação por Recência + Monetário permite marketing direcionado** com 4 perfis de clientes identificados
 
 ### Performance do Modelo
 
-O modelo de regressao linear para previsao de receita apresentou metricas completas de avaliacao (R² e RMSE) calculadas no split de teste (20% dos dados).
+O modelo de regressão linear para previsão de satisfação apresentou **R² de 0.44%** e **RMSE de 1.10 pontos** (escala 1-5), calculados no split de teste (20% dos dados). O R² próximo de zero indica que preço e quantidade não explicam a variação da satisfação nesta base — resultado negativo, reportado como tal (ver seção 5 do notebook).
 
 ## Execução
 
