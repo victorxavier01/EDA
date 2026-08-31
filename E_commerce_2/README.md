@@ -1,6 +1,6 @@
 # EDA: E-commerce UK
 
-Análise exploratória de dados com **541.909 transações** de uma loja de varejo online britânica. O dataset abrange o período de dezembro de 2009 a dezembro de 2011.
+Análise exploratória de dados com **541.909 transações** de uma loja de varejo online britânica. O dataset abrange o período de dezembro de 2010 a dezembro de 2011.
 
 **Dataset**: []()
 
